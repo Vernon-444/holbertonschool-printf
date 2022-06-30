@@ -1,2 +1,2 @@
 # holbertonschool-printf
-Recreation of Printf with Douglas D
+Recreation of Printf in C with Douglas D
