@@ -3,11 +3,17 @@
 #define MAIN_H
 
 #include <stdarg.h>
-#include <unistd.h>
-
-void _printf(char* format, ...);
+#include <unistd.h> /* includes write func */
 
 
+typedef struct printer
+{
+	char *symbol;
+	void (*print)(va_list arg);
+} printer_t;
+
+
+void _printf(char* format, ...); /* prototype provided */
 
 
 
