@@ -1,54 +1,57 @@
 #include "main.h"
+
 /**
- * intlen - gets length of int, used to perform itoa
+ * _intorder - determines size of int
  *
- * @num: int to get length of
+ * @num: input num to be sized
  *
- * Return: length of int, called len
+ * Return: magnitude of num
  */
-int intlen(int num)
+
+int _intorder(int num)
 {
-	int order = 1000000000, count;
+	int order = 1;
 
 	while ((num / order) != 0)
 	{
-		count++;
-		order = order / 10;
+		order = order * 10;
 	}
-	return(count);
+
+	return (order / 10);
 }
+
 
 
 /**
- * _putint - prints integers fed int from mods d & i
+ * _putint - prints out input integer
  *
- * @n: num fed from printf
+ * @num: number (integer) to be printed
  *
- * Return: int of num of chars written
+ * Return: number of ints printed as chars
  */
 
-int _putint(int n)
+int _putint(int num)
 {
-        int i = 0, len;
-	char *str;
-	bool neg = false;
+	int order;
+	int result, count  = 0;
 
-	/* Check for negatives */
-	if (n < 0)
+	order  = intorder(num);
+
+	if (num < 0)
 	{
-		n = -n;
-		neg = true;
+		num = -num;
+		_putchar('-');
 	}
 
-	/*Get len of int*/
-	len = intlen(n);
-	str = malloc(count * sizeof(char));
-
-	/* write ints into */
-        if (neg == true)
+	while (order >= 1)
 	{
-		_putcahr('-');
-		i++;
+		_putchar((num / order) + '0');
+		num = num % order;
+		order = order / 10;
+		count++;
 	}
-	
+
+	return (count);
+
 }
+

@@ -1,19 +1,24 @@
+
 #include "main.h"
 
 /**
- * _putstring - prints string
+ *  _putstring - prints a string input
  *
  * @s: string to be printed
+ *
+ * Return: num of chars printed
  */
 
 int _putstring(char *s)
 {
-	if (*s == '\0')
-	{
-		_putchar(10);
-		return;
-	}
+	if (*s == NULL)
+		*s = "(nil)";
 
-	_putchar(*s);
-	_putstring(++s);
+	while (*s != '\0')
+	{
+		_putchar(*s);
+		*s++;
+		count++;
+	}
+	return (count);
 }
