@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * _plzprintf - prints anything at all
+ * _printf - prints anything at all
  *
  * @format: format string
  *
  * Return: how many bytes it prints to standard output
  */
-int _plzprintf(char *format, ...)
+int _printf(char *format, ...)
 {
 	va_list args;
 	unsigned int index = 0, outputlength = 0;
