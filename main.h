@@ -13,7 +13,7 @@ typedef struct printer
 } printer_t;
 
 
-void _printf(char* format, ...); /* prototype provided */
+int _printf(char* format, ...); /* prototype provided */
 
 int _intorder(int num);
 int _putchar(char c);
