@@ -29,5 +29,5 @@ int (*_plzpickaprinter(const char *format))(va_list)
 			return (structarray[structarrayindex].printfunction);
 		structarrayindex++;
 	}
-	return (structarray[structarrayindex].printfunction);
+	return (&structarray[structarrayindex].printfunction);
 }
