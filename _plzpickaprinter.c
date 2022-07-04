@@ -26,8 +26,8 @@ int (*_plzpickaprinter(const char *format))(va_list)
 	while (structarray[structarrayindex])
 	{
 		if (structarray[structarrayindex].specifier == format)
-			return (structarray[structarrayindex].function);
+			return (structarray[structarrayindex].printfunction);
 		structarrayindex++;
 	}
-	return (structarray[structarrayindex].function);
+	return (structarray[structarrayindex].printfunction);
 }

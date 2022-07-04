@@ -9,7 +9,7 @@ int _plzprintf(char *format, ...)
 {
 	va_list args;
 	unsigned int index = 0, outputlength = 0;
-	int getprinty;
+	int (*getprinty)(va_list);
 
 	va_start(args, format);
 
