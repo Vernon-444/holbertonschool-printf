@@ -10,7 +10,7 @@
  * and returns an int after printing, or we just return NULL if we want to
  * pretend that the specifier wasn't meaningful or that we didn't hear it
  */
-int (*_plzpickaprinter(const char *format))(va_list)
+int (*_plzpickaprinter(char picky))(va_list)
 {
 
 	printer_t structarray[] = {
@@ -25,7 +25,7 @@ int (*_plzpickaprinter(const char *format))(va_list)
 	structarrayindex = 0;
 	for (structarrayindex = 0; structarrayindex <= 4; structarrayindex++)
 	{
-		if (*structarray[structarrayindex].specifier == *format)
+		if (*structarray[structarrayindex].specifier == picky)
 			return (structarray[structarrayindex].printfunction);
 	}
 	return (structarray[structarrayindex].printfunction);

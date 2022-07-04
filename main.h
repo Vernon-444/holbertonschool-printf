@@ -13,8 +13,8 @@ typedef struct printer
 } printer_t;
 
 
-int _printf(char* format, ...); /* prototype provided */
-
+int _printf(char* format, ...);
+int (*_plzpickaprinter(char picky))(va_list);
 int _intorder(int numby);
 int _putchar(char c);
 int _printchar(va_list c);
