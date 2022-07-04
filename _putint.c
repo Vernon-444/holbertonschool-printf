@@ -41,6 +41,7 @@ int _putint(int num)
 	{
 		num = -num;
 		_putchar('-');
+		count++;
 	}
 
 	while (order >= 1)
@@ -54,4 +55,3 @@ int _putint(int num)
 	return (count);
 
 }
-
