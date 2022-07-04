@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * _plzprintf - prints anything at all
  *
@@ -33,7 +35,7 @@ int _plzprintf(char *format, ...)
 				return (-1); /* how do we include spurious trailing warning?*/
 			getprinty = _plzpickaprinter(format[index + 1]);
 			if (getprinty != NULL)
-				outputlength += getprinty(va_arg);
+				outputlength += getprinty(args);
 		}
 	}
 	va_end(args);

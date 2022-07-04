@@ -1,5 +1,5 @@
 #include "main.h"
-#include "stdlib.h"
+#include <stdlib.h>
 
 /**
  * _plzpickaprinter - returns the right function for a given _printf specifier
@@ -10,11 +10,11 @@
  * and returns an int after printing, or we just return NULL if we want to
  * pretend that the specifier wasn't meaningful or that we didn't hear it
  */
-int (*_plzpickaprinter(const char *format))(va_list)
+static int (*_plzpickaprinter(const char *format))(va_list)
 {
 
 	printer_t structarray[] = {
-		{"c", _putchar},
+		{"c", _printchar},
 		{"s", _putstring},
 		{"i", _putint},
 		{"d", _putint},
@@ -25,9 +25,9 @@ int (*_plzpickaprinter(const char *format))(va_list)
 	structarrayindex = 0;
 	while (structarray[structarrayindex])
 	{
-		if (structarray[structarrayindex].specifier == format)
+		if (*structarray[structarrayindex].specifier == *format)
 			return (structarray[structarrayindex].printfunction);
 		structarrayindex++;
 	}
-	return (&structarray[structarrayindex].printfunction);
+	return (structarray[structarrayindex].printfunction);
 }

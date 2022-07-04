@@ -8,11 +8,11 @@
  * Return: magnitude of num
  */
 
-int _intorder(int num)
+int _intorder(int numby)
 {
 	int order = 1;
 
-	while ((num / order) != 0)
+	while ((numby / order) != 0)
 	{
 		order = order * 10;
 	}
@@ -30,24 +30,27 @@ int _intorder(int num)
  * Return: number of ints printed as chars
  */
 
-int _putint(int num)
+int _putint(va_list num)
 {
+	int thenumber;
 	int order;
 	int count  = 0;
 
-	order  = _intorder(num);
+	thenumber = va_arg(num, int);
 
-	if (num < 0)
+	order  = _intorder(thenumber);
+
+	if (thenumber < 0)
 	{
-		num = -num;
+		thenumber = -thenumber;
 		_putchar('-');
 		count++;
 	}
 
 	while (order >= 1)
 	{
-		_putchar((num / order) + '0');
-		num = num % order;
+		_putchar((thenumber / order) + '0');
+		thenumber = thenumber % order;
 		order = order / 10;
 		count++;
 	}

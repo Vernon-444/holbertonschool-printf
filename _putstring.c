@@ -1,5 +1,5 @@
-
 #include "main.h"
+#include <stdarg.h>
 
 /**
  *  _putstring - prints a string input
@@ -9,7 +9,7 @@
  * Return: num of chars printed
  */
 
-int _putstring(char *s)
+int _putstring(va_list s)
 {
 	int count = 0;
 
@@ -18,7 +18,7 @@ int _putstring(char *s)
 
 	while (*s != '\0')
 	{
-		_putchar(*s);
+		_printchar(s);
 		count++;
 	}
 	return (count);

@@ -15,9 +15,10 @@ typedef struct printer
 
 int _printf(char* format, ...); /* prototype provided */
 
-int _intorder(int num);
+int _intorder(int numby);
 int _putchar(char c);
-int _putstring(char *s);
-int _putint(int num);
+int _printchar(va_list c);
+int _putstring(va_list s);
+int _putint(va_list num);
 
 #endif
