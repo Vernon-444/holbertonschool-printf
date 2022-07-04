@@ -8,18 +8,16 @@
 
 typedef struct printer
 {
-	char *symbol;
-	void (*print)(va_list arg);
+	char *specifier;
+	int (*printfunction)(va_list arg);
 } printer_t;
 
 
 void _printf(char* format, ...); /* prototype provided */
 
-
+int _intorder(int num);
 int _putchar(char c);
-int _putint(int c);
-int _putstring(char *c);
-
-
+int _putstring(char *s);
+int _putint(int num);
 
 #endif
