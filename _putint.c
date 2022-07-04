@@ -33,9 +33,9 @@ int _intorder(int num)
 int _putint(int num)
 {
 	int order;
-	int result, count  = 0;
+	int count  = 0;
 
-	order  = intorder(num);
+	order  = _intorder(num);
 
 	if (num < 0)
 	{

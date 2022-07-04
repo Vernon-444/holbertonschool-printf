@@ -11,13 +11,14 @@
 
 int _putstring(char *s)
 {
-	if (*s == NULL)
-		*s = "(nil)";
+	int count = 0;
+
+	if (s == NULL)
+		s = "(nil)";
 
 	while (*s != '\0')
 	{
 		_putchar(*s);
-		*s++;
 		count++;
 	}
 	return (count);
