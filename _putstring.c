@@ -11,14 +11,16 @@
 
 int _putstring(va_list s)
 {
+	char *stringy;
 	int count = 0;
 
-	if (s == NULL)
-		s = "(nil)";
+	stringy = va_arg(s, char *);
+	if (stringy == NULL)
+		stringy = "(nil)";
 
-	while (*s != '\0')
+	while (*stringy != '\0')
 	{
-		_printchar(s);
+		_putchar(*stringy);
 		count++;
 	}
 	return (count);

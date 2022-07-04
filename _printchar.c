@@ -10,5 +10,8 @@
  */
 int _printchar(va_list c)
 {
-	return (write(1, &c, 1));
+	char thecharacter;
+
+	thecharacter = va_arg(c, int);
+	return (write(1, &thecharacter, 1));
 }
