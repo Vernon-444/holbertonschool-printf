@@ -4,7 +4,7 @@
 /**
  * _plzpickaprinter - returns the right function for a given _printf specifier
  *
- * @format: const character from format string that is hopefully a specifier
+ * @picky: character from format string that is hopefully a specifier
  *
  * Return: function pointer to specific printer that takes a va_list argument
  * and returns an int after printing, or we just return NULL if we want to

@@ -10,7 +10,8 @@
 int _printf(char *format, ...)
 {
 	va_list args;
-	unsigned int index = 0, outputlength = 0;
+	unsigned int index = 0;
+	int outputlength = 0;
 	int (*getprinty)(va_list);
 
 	va_start(args, format);
@@ -35,7 +36,16 @@ int _printf(char *format, ...)
 				return (-1); /* how do we include spurious trailing warning?*/
 			getprinty = _plzpickaprinter(format[index + 1]);
 			if (getprinty != NULL)
+			{
 				outputlength += getprinty(args);
+				index += 2;
+			}
+			else if (getprinty == NULL)
+			{
+				_putchar('%');
+				index++;
+				outputlength++;
+			}
 		}
 	}
 	va_end(args);
