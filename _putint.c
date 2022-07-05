@@ -50,7 +50,7 @@ int _putint(va_list num)
 
 	while (order >= 1)
 	{
-		result = numby / order;
+		result = thenumber / order;
 
 		if (result < 0)
 		{
