@@ -18,12 +18,11 @@ string that specifies how subsequent arguments are converted for output.
 .SH Return value
 On successful return, these functions return the number of characters printed, excluding the null byte used to end output to strings.
 
-If an output error is encountered, a negative value is returned.
+Will return a negative number on failure or error.
 .SH Format of the format string
-The format string is composed of 0 or more directives (ordinary characters that are not %), which are copied to the output stream. The format string is also composed of conversion specifications, each of which result in fetching zero or more subsequent arguments. Each conversion specification is introduced by the character % and ends with the conversion specifier.
-The argument must correspond properly with the conversion specifier. By default, the arguments are used in the order given.
+The format string is composed of 0 or more directives (normal characters that arent %), which are copied to the output. The format string is also made up of conversion modifiers that are then used to pull the proper function to print the specific data type that corresponds to the argument the modifier is referencing. 
 .SH The conversion specifier
-A character that specifies the type of conversion to be applied. The conversion specifiers and their meanings are:
+A character that specifies the type of conversion to be applied. The conversion specifiers:
 .TP
 .BR c
 The int argument is converted to an unsigned char, then the resulting character is written
@@ -32,7 +31,7 @@ The int argument is converted to an unsigned char, then the resulting character 
 The const char * argument is expected to be a pointer to an array of character type (pointer to a string). Characters from the array are written up to a terminating null byte, but do ot include the terminating null byte.
 .TP
 .B d, i
-The int argument is converted to signed decimal notation.
+The int argument is converted to signed decimal notation in base 10.
 .TP
 .B %
 A '%' is written but no argument is converted. The complete version specification is '%%'
@@ -41,10 +40,11 @@ To print the day of the year, where weekday and month are pointers to strings an
 
 #include "main.h"
 
-_printf("%s, %s %d, %d\\n", weekday, month, day, year);
+_printf("Bobby yelled about %s %d times!", thing, number);
 .SH SEE ALSO
 .I printf(3)
 .SH BUGS
-No known bugs.
+Bug where if an invalid number of args is provided, the program will compile despote the standard versoin
+of printf throwing a compiler error.
 .SH AUTHOR
 Douglas Davison, Brayden Vernon
