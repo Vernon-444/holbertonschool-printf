@@ -10,8 +10,7 @@
 int _printf(char *format, ...)
 {
 	va_list args;
-	unsigned int index = 0;
-	int outputlength = 0;
+	int index = 0, outputlength = 0;
 	int (*getprinty)(va_list);
 
 	va_start(args, format);
@@ -30,6 +29,7 @@ int _printf(char *format, ...)
 				_putchar('%');
 				index += 2;
 				outputlength++;
+				continue;
 			}
 			else if (format[index + 1] == '\0')
 				return (-1); /* how do we include spurious trailing warning?*/

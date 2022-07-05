@@ -16,7 +16,7 @@ int _putstring(va_list s)
 
 	stringy = va_arg(s, char *);
 	if (stringy == NULL)
-		stringy = "(nil)";
+		stringy = "(null)";
 
 	while (*stringy != '\0')
 	{
