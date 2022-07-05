@@ -10,7 +10,7 @@
 
 int _intorder(int numby)
 {
-	unsigned long long int order = 1;
+	unsigned long int order = 1;
 
 	while ((numby / order) != 0)
 	{
@@ -33,7 +33,7 @@ int _intorder(int numby)
 int _putint(va_list num)
 {
 	int thenumber;
-	unsigned long long int order;
+	unsigned long int order;
 	int count  = 0;
 
 	thenumber = va_arg(num, int);
