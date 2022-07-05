@@ -10,10 +10,14 @@
 
 int _intorder(int numby)
 {
-	unsigned long int order = 1;
+	int order = 1;
 
 	while ((numby / order) != 0)
 	{
+		if (order == 1000000000 && (numby / order) != 0)
+		{
+			return (order);
+		}
 		order = order * 10;
 	}
 
@@ -32,9 +36,7 @@ int _intorder(int numby)
 
 int _putint(va_list num)
 {
-	int thenumber;
-	unsigned long int order;
-	int count  = 0;
+	int thenumber, order, result, count = 0;
 
 	thenumber = va_arg(num, int);
 
@@ -42,14 +44,19 @@ int _putint(va_list num)
 
 	if (thenumber < 0)
 	{
-		thenumber = -thenumber;
 		_putchar('-');
 		count++;
 	}
 
 	while (order >= 1)
 	{
-		_putchar((thenumber / order) + '0');
+		result = numby / order;
+
+		if (result < 0)
+		{
+			result = -result;
+		}
+		_putchar(result + '0');
 		thenumber = thenumber % order;
 		order = order / 10;
 		count++;
