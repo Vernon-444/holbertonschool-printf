@@ -15,7 +15,6 @@ int _printf(char *format, ...)
 	int (*getprinty)(va_list);
 
 	va_start(args, format);
-
 	while (format[index])
 	{
 		while (format[index] != '%' && format[index] != '\0')

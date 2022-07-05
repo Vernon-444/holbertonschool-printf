@@ -3,14 +3,14 @@
 /**
  * _intorder - determines size of int
  *
- * @num: input num to be sized
+ * @numby: input num to be sized
  *
  * Return: magnitude of num
  */
 
 int _intorder(int numby)
 {
-	int order = 1;
+	unsigned long int order = 1;
 
 	while ((numby / order) != 0)
 	{
@@ -33,7 +33,7 @@ int _intorder(int numby)
 int _putint(va_list num)
 {
 	int thenumber;
-	int order;
+	unsigned long int order;
 	int count  = 0;
 
 	thenumber = va_arg(num, int);
