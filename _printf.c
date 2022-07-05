@@ -30,6 +30,7 @@ int _printf(char *format, ...)
 				_putchar('%');
 				index += 2;
 				outputlength++;
+				continue;
 			}
 			else if (format[index + 1] == '\0')
 				return (-1); /* how do we include spurious trailing warning?*/
