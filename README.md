@@ -1,14 +1,14 @@
-#Printf
+# Printf
 
 This was a custom recreation of printf and a few conversion specifiers
 with Doug D and Brayden V.
 
-###What It Does:
+### What It Does:
 
 _printf takes an input and uses conversion specifiers (examples provided)
 to determine data type to be printed into a string.
 
-###Examples:
+### Examples:
 
 > Using a string
 
@@ -43,6 +43,6 @@ and hexadecimal numbers, as well as float values.
 
 This project was coded in C and coded in the Betty style.
 
-###Credits
+### Credits
 Douglas D. (@wdmd2022)
 Brayden V. (@Vernon-444)
