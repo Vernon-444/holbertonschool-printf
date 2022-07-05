@@ -21,6 +21,7 @@ int _putstring(va_list s)
 	while (*stringy != '\0')
 	{
 		_putchar(*stringy);
+		stringy++;
 		count++;
 	}
 	return (count);
