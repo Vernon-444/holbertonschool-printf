@@ -13,7 +13,5 @@ int _printchar(va_list c)
 	char thecharacter;
 
 	thecharacter = va_arg(c, int);
-	if (thecharacter = NULL)
-		return (0);
 	return (write(1, &thecharacter, 1));
 }
