@@ -3,7 +3,7 @@
 /**
  * _intorder - determines size of int
  *
- * @num: input num to be sized
+ * @numby: input num to be sized
  *
  * Return: magnitude of num
  */
