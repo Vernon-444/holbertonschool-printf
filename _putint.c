@@ -48,6 +48,12 @@ int _putint(va_list num)
 		count++;
 	}
 
+	if (thenumber == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
 	while (order >= 1)
 	{
 		result = thenumber / order;
